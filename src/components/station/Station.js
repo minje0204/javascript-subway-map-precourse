@@ -1,4 +1,5 @@
 import printLayout from './Template.js';
+import { handleUnvalidInput } from '../../utils/inputFunc.js';
 
 const addEvent = () => {
   const stationAddBtn = document.getElementById('station-add-button');
@@ -8,7 +9,7 @@ const addEvent = () => {
 
 const handleClick = () => {
   const stationName = getStationName();
-  console.log(stationName);
+  if (stationName) console.log(stationName);
   //Todo createStation
 };
 const getStationName = () => {
@@ -18,9 +19,8 @@ const getStationName = () => {
   stationNameInput.value = '';
 
   if (validate(stationName)) return stationName;
-  // const ERR_MESSAGE = '역이름은 2글자 이상이여야 합니다.';
-  // handleUnvalidInput(stationNameInput, ERR_MESSAGE);
-  return '에러~~';
+  const ERR_MESSAGE = '역이름은 2글자 이상이여야 합니다.';
+  handleUnvalidInput(stationNameInput, ERR_MESSAGE);
 };
 
 const validate = (input) => {
