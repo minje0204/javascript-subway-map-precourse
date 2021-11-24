@@ -1,0 +1,26 @@
+{
+  "name": "javascript-subway-map-precourse",
+  "version": "1.0.0",
+  "description": "## 🚀 기능 요구사항",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx http-server ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woowacourse/javascript-subway-map-precourse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woowacourse/javascript-subway-map-precourse/issues"
+  },
+  "homepage": "https://github.com/woowacourse/javascript-subway-map-precourse#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "prettier": "2.4.1"
+  }
+}
