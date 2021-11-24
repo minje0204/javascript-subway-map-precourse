@@ -1,13 +1,27 @@
-const Station = () => {
-  const container = document.getElementById('contents-container');
-  return {
-    render() {
-      container.innerHTML = '';
-      const station = document.createElement('div');
-      station.innerHTML = '<p>todo: Station</p>';
+import printLayout from './Template.js';
 
-      container.appendChild(station);
-    },
-  };
+const addEvent = () => {
+  const stationAddBtn = document.getElementById('station-add-button');
+
+  stationAddBtn.addEventListener('click', handleClick);
+};
+
+const handleClick = () => {
+  const stationName = getStationName();
+  console.log(stationName);
+  //Todo createStation
+};
+const getStationName = () => {
+  const stationNameInput = document.getElementById('station-name-input');
+  const stationName = stationNameInput.value;
+
+  stationNameInput.value = '';
+  //Todo: vaidate
+  return stationName;
+};
+
+const Station = () => {
+  printLayout();
+  addEvent();
 };
 export default Station;

@@ -10,13 +10,13 @@ const SubwayMap = () => {
   const printButton = document.getElementById('map-print-manager-button');
 
   const addEvents = () => {
-    stationButton.addEventListener('click', Station().render);
+    stationButton.addEventListener('click', Station());
     lineButton.addEventListener('click', Line().render);
     sectionButton.addEventListener('click', Section().render);
     printButton.addEventListener('click', PrintLines().render);
   };
   addEvents();
-  Station().render();
+  Station();
 };
 
 SubwayMap();
