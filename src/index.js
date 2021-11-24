@@ -1,7 +1,7 @@
-import Section from './section/Section.js';
-import Line from './line/Line.js';
-import PrintLines from './printLines/PrintLines.js';
-import Station from './station/Station.js';
+import Section from './components/section/Section.js';
+import Line from './components/line/Line.js';
+import PrintLines from './components/printLines/PrintLines.js';
+import Station from './components/station/Station.js';
 
 const SubwayMap = () => {
   const stationButton = document.getElementById('station-manager-button');
