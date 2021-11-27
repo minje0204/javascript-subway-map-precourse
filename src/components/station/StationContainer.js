@@ -40,7 +40,6 @@ const getStationName = () => {
 };
 
 const validate = (input) => {
-  //Todo 중복 이름 체크
   return input.length < 2 ? false : true;
 };
 
