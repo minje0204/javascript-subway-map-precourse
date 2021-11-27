@@ -16,8 +16,10 @@ const addEvent = () => {
 const handleClick = () => {
   const stationName = getStationName();
   const prev = getItem(STATION_STORAGE_KEY) || [];
-  if (!isDuplicated(stationName, prev))
-    return setItem(STATION_STORAGE_KEY, [...prev, new Station(stationName)]);
+  if (!isDuplicated(stationName, prev)) {
+    setItem(STATION_STORAGE_KEY, [...prev, new Station(stationName)]);
+    return printLayout();
+  }
 
   const stationNameInput = document.getElementById('station-name-input');
   const ERR_MESSAGE = '중복된 역이름 입니다';
