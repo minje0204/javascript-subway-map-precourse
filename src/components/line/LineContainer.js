@@ -1,4 +1,4 @@
-const Line = () => {
+const LineContainer = () => {
   const container = document.getElementById('contents-container');
   return {
     render() {
@@ -10,4 +10,4 @@ const Line = () => {
     },
   };
 };
-export default Line;
+export default LineContainer;

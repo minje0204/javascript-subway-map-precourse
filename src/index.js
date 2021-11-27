@@ -1,5 +1,5 @@
 import Section from './components/section/Section.js';
-import Line from './components/line/Line.js';
+import LineContainer from './components/line/LineContainer.js';
 import PrintLines from './components/printLines/PrintLines.js';
 import StationContainer from './components/station/StationContainer.js';
 
@@ -11,7 +11,7 @@ const SubwayMap = () => {
 
   const addEvents = () => {
     stationButton.addEventListener('click', StationContainer);
-    lineButton.addEventListener('click', Line().render);
+    lineButton.addEventListener('click', LineContainer().render);
     sectionButton.addEventListener('click', Section().render);
     printButton.addEventListener('click', PrintLines().render);
   };
