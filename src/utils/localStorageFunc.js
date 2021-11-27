@@ -8,5 +8,5 @@ const getItem = (key) => {
   const value = window.localStorage.getItem(key);
   return JSON.parse(value);
 };
-//for Test
+
 export { setItem, getItem };
