@@ -1,4 +1,8 @@
-import { getItem, STATION_STORAGE_KEY } from '../../utils/localStorageFunc.js';
+import {
+  getItem,
+  setItem,
+  STATION_STORAGE_KEY,
+} from '../../utils/localStorageFunc.js';
 
 const INPUT_TAG = `
 <div id="station-input-form">
@@ -33,15 +37,20 @@ const printHeader = () => {
   });
 };
 
-const handleDelte = (idx) => {
-  console.log(idx);
+const handleDelte = (name) => {
+  const prev = getItem(STATION_STORAGE_KEY);
+  setItem(
+    STATION_STORAGE_KEY,
+    prev.filter((v) => v.name !== name),
+  );
+  printLayout();
 };
 const printStaitons = () => {
   const table = document.getElementById('station-names');
   const stations = getItem(STATION_STORAGE_KEY);
 
   if (stations) {
-    stations.forEach((item, idx) => {
+    stations.forEach((item) => {
       const trEl = document.createElement('tr');
       const tdEl = document.createElement('td');
       tdEl.innerText = item.name;
@@ -50,7 +59,7 @@ const printStaitons = () => {
       const tdEl2 = document.createElement('td');
       const btnEl = document.createElement('button');
       btnEl.innerText = '삭제';
-      btnEl.addEventListener('click', () => handleDelte(idx));
+      btnEl.addEventListener('click', () => handleDelte(item.name));
       tdEl2.appendChild(btnEl);
 
       trEl.appendChild(tdEl2);
@@ -64,7 +73,7 @@ const printLayout = () => {
 
   container.innerHTML = INPUT_TAG + STATION_LIST;
 
-  if (getItem(STATION_STORAGE_KEY)) {
+  if (getItem(STATION_STORAGE_KEY)?.length) {
     printHeader();
     printStaitons();
   }
